@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=Hi%2C+I'm+Nikita+Denissov;GaTech+CS+Master's+Student;Fullstack+Developer;Open-Source+Enthusiast" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=650&lines=Nikita+Denissov;Senior+Software+Engineer;GaTech+OMSCS+Student;High-Load+Systems+%26+Open-Source" alt="Typing SVG" />
 </div>
 
 <p align="center">
-  <b>GaTech Master's Student | Fullstack Engineer | High-Load Systems | LLM Integration</b>
+  <b>GaTech Master's Student | Fullstack & Systems Engineer | High-Load Architecture | LLM Integration</b>
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 ### About Me
 
 - Pursuing a **Master of Science in Computer Science** at the **Georgia Institute of Technology** (Top-10 CS Worldwide).
-- Based in Astana, Kazakhstan, working as a **Lead Fullstack Engineer** with 3+ years of commercial experience.
+- Based in Astana, Kazakhstan, working as a **Lead / Senior Software Engineer** with 3+ years of commercial experience.
 - Specializing in **High-load Systems**, **LLM Integration**, and scalable microservices architectures.
 - Open-source advocate and daily **NixOS** user.
 - Infrastructure & experiments hosted at [**dep.ovh**](https://dep.ovh).
