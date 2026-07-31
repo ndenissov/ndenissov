@@ -46,16 +46,15 @@
 
 ### Statistics
 
-<div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=ndenissov&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Nikita's GitHub Stats" />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ndenissov&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
-  <br />
-  <img src="https://streak-stats.demolab.com/?user=ndenissov&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-</div>
+<p align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=ndenissov&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" height="190" alt="GitHub Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ndenissov&theme=tokyonight&hide_border=true&layout=compact" height="190" alt="Top Languages" />
+</p>
 
-<br />
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=ndenissov&theme=tokyonight&hide_border=true" height="190" alt="GitHub Streak" />
+</p>
 
-<div align="center">
-  <sub>Profile Visitors</sub><br/>
-  <img src="https://profile-counter.glitch.me/ndenissov/count.svg" alt="Visitors" />
-</div>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=ndenissov&color=36BCF7&style=for-the-badge" alt="Profile Views" />
+</p>
