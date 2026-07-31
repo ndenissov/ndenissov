@@ -44,23 +44,16 @@
 
 ---
 
-### Featured Projects
-
-- **[minager](https://github.com/ndenissov/minager)** - High-performance software suite for the remote monitoring, management, and automation of ASIC hardware via the Telegram Bot API (Go).
-- **[HDRezka](https://github.com/ndenissov/HDRezka)** - Async HDRezka client library for scripts and multi-user APIs (Python).
-- **[bf](https://github.com/ndenissov/bf)** - Shortest Brainfuck interpreter written in Golang.
-- **[FastDub](https://github.com/ndenissov/FastDub)** - A Python CLI package for voice over subtitles with dynamic audio ducking and YouTube integration.
-- **[UniversalIMG](https://github.com/ndenissov/UniversalIMG)** - Open & edit .img files for GTA III / VC / SA (+GUI).
-
----
-
 ### Statistics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ndenissov&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Nikita's GitHub Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=ndenissov&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="Nikita's GitHub Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ndenissov&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
   <br />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ndenissov&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+  <img src="https://streak-stats.demolab.com/?user=ndenissov&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </div>
+
+<br />
 
 <div align="center">
   <sub>Profile Visitors</sub><br/>
