@@ -52,7 +52,7 @@
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=ndenissov&theme=tokyonight&hide_border=true" height="190" alt="GitHub Streak" />
+  <img src="https://streak-stats.vercel.app/?user=ndenissov&theme=tokyonight&hide_border=true" height="190" alt="GitHub Streak" />
 </p>
 
 <p align="center">

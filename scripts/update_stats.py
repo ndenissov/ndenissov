@@ -30,7 +30,7 @@ def get_pypi_downloads():
         url = f"https://static.pepy.tech/badge/{pkg}"
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-            with urllib.request.urlopen(req) as response:
+            with urllib.request.urlopen(req, timeout=10) as response:
                 svg = response.read().decode()
                 texts = re.findall(r'<text[^>]*>([^<]+)</text>', svg)
                 if len(texts) >= 3:
@@ -52,7 +52,7 @@ def get_github_downloads(username):
         
     try:
         req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             repos = json.loads(response.read().decode())
             for repo in repos:
                 releases_url = repo['releases_url'].replace('{/id}', '')
@@ -69,9 +69,25 @@ def get_github_downloads(username):
         print(f"Error fetching GitHub repos: {e}")
     return total_downloads
 
+def update_streak_stats_svg():
+    url = "https://streak-stats.vercel.app/?user=ndenissov&theme=tokyonight&hide_border=true"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            svg_data = response.read().decode('utf-8')
+            if "Failed to retrieve contributions" not in svg_data and len(svg_data) > 500:
+                with open("streak-stats.svg", "w", encoding="utf-8") as f:
+                    f.write(svg_data)
+                print("Updated streak-stats.svg")
+            else:
+                print("Failed to retrieve streak stats SVG from Vercel")
+    except Exception as e:
+        print(f"Error fetching streak stats SVG: {e}")
+
 def main():
     pypi_downloads = get_pypi_downloads()
     github_downloads = get_github_downloads("ndenissov")
+    update_streak_stats_svg()
     
     stats = {
         "pypiDownloads": pypi_downloads,
@@ -92,3 +108,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
