@@ -24,6 +24,9 @@
 - Specializing in **High-load Systems**, **LLM Integration**, and scalable microservices architectures.
 - Open-source advocate and daily **NixOS** user.
 - Infrastructure & experiments hosted at [**dep.ovh**](https://dep.ovh).
+<p align="center">
+	 <a href="https://mynickname.com/id1846034"><img src="https://mynickname.com/img.php?nick=n.denissov&sert=25&text=t8" alt="nick n.denissov" /></a>
+</p>
 
 ---
 
