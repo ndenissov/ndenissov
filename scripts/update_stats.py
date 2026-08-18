@@ -43,32 +43,67 @@ def get_pypi_downloads():
             print(f"Error fetching {pkg}: {e}")
     return total_downloads
 
-def get_github_downloads(username):
-    url = f"https://api.github.com/users/{username}/repos?per_page=100"
-    total_downloads = 0
-    
-    headers = {'User-Agent': 'Mozilla/5.0'}
+from concurrent.futures import ThreadPoolExecutor
+
+def get_github_token():
     token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        try:
+            import subprocess
+            token = subprocess.check_output(["gh", "auth", "token"], text=True, stderr=subprocess.DEVNULL).strip()
+        except Exception:
+            token = None
+    return token
+
+def get_repo_downloads(repo, headers):
+    releases_url = repo['releases_url'].replace('{/id}', '')
+    total = 0
+    try:
+        r_req = urllib.request.Request(releases_url, headers=headers)
+        with urllib.request.urlopen(r_req, timeout=10) as r_res:
+            releases = json.loads(r_res.read().decode())
+            for release in releases:
+                for asset in release.get('assets', []):
+                    total += asset.get('download_count', 0)
+    except Exception:
+        pass
+    return total
+
+def get_github_downloads(username, fallback=0):
+    token = get_github_token()
+    headers = {'User-Agent': 'Mozilla/5.0'}
     if token:
         headers['Authorization'] = f"token {token}"
         
+    page = 1
+    all_repos = []
+    total_downloads = 0
+    success = False
+    
     try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=10) as response:
-            repos = json.loads(response.read().decode())
-            for repo in repos:
-                releases_url = repo['releases_url'].replace('{/id}', '')
-                try:
-                    r_req = urllib.request.Request(releases_url, headers=headers)
-                    with urllib.request.urlopen(r_req) as r_res:
-                        releases = json.loads(r_res.read().decode())
-                        for release in releases:
-                            for asset in release.get('assets', []):
-                                total_downloads += asset.get('download_count', 0)
-                except Exception:
-                    pass
+        while True:
+            url = f"https://api.github.com/users/{username}/repos?per_page=100&page={page}"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as response:
+                repos = json.loads(response.read().decode())
+                if not repos:
+                    break
+                all_repos.extend(repos)
+                if len(repos) < 100:
+                    break
+                page += 1
+                
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            counts = executor.map(lambda r: get_repo_downloads(r, headers), all_repos)
+            total_downloads = sum(counts)
+            
+        success = True
     except Exception as e:
         print(f"Error fetching GitHub repos: {e}")
+        
+    if not success and fallback > 0:
+        print(f"Using fallback GitHub downloads: {fallback}")
+        return fallback
     return total_downloads
 
 def update_github_stats_svg(username):
@@ -126,8 +161,24 @@ def update_streak_stats_svg():
 
 def main():
     username = "ndenissov"
+    existing_stats = {}
+    stats_file = os.path.join(ROOT_DIR, "stats.json")
+    if os.path.exists(stats_file):
+        try:
+            with open(stats_file, "r", encoding="utf-8") as f:
+                existing_stats = json.load(f)
+        except Exception:
+            pass
+
     pypi_downloads = get_pypi_downloads()
-    github_downloads = get_github_downloads(username)
+    if pypi_downloads == 0 and "pypiDownloads" in existing_stats:
+        pypi_downloads = existing_stats["pypiDownloads"]
+
+    github_fallback = existing_stats.get("githubDownloads", 0)
+    github_downloads = get_github_downloads(username, fallback=github_fallback)
+    if github_downloads == 0 and github_fallback > 0:
+        github_downloads = github_fallback
+
     update_streak_stats_svg()
     update_github_stats_svg(username)
     update_top_langs_svg(username)
@@ -145,7 +196,7 @@ def main():
         "github_color": "green"
     }
     
-    with open(os.path.join(ROOT_DIR, "stats.json"), "w") as f:
+    with open(stats_file, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
     print("Updated stats.json")
 
