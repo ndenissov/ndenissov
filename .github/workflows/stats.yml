@@ -28,6 +28,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add stats.json streak-stats.svg || git add stats.json
+          git add stats.json streak-stats.svg github-stats.svg top-langs.svg || git add -A *.svg stats.json
           git commit -m "chore: update stats [skip ci]" || echo "No changes to commit"
           git push

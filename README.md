@@ -50,12 +50,12 @@
 ### Statistics
 
 <p align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=ndenissov&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" height="190" alt="GitHub Stats" />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ndenissov&theme=tokyonight&hide_border=true&layout=compact" height="190" alt="Top Languages" />
+  <img src="./github-stats.svg" height="190" alt="GitHub Stats" />
+  <img src="./top-langs.svg" height="190" alt="Top Languages" />
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.vercel.app/?user=ndenissov&theme=tokyonight&hide_border=true" height="190" alt="GitHub Streak" />
+  <img src="./streak-stats.svg" height="190" alt="GitHub Streak" />
 </p>
 
 <p align="center">
