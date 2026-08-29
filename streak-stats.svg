@@ -54,7 +54,7 @@
                 <!-- Current Streak Big Number -->
                 <g transform='translate(166,48)'>
                     <text x='81.5' y='32' stroke-width='0' text-anchor='middle' fill='#bf91f3' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='700' font-size='28px' font-style='normal' style='animation: currstreak 0.6s linear forwards'>
-                        2
+                        0
                     </text>
                 </g>
 
@@ -68,7 +68,7 @@
                 <!-- Current Streak Range -->
                 <g transform='translate(166,145)'>
                     <text x='81.5' y='21' stroke-width='0' text-anchor='middle' fill='#38bdae' stroke='none' font-family='"Segoe UI", Ubuntu, sans-serif' font-weight='400' font-size='12px' font-style='normal' style='opacity: 0; animation: fadein 0.5s linear forwards 0.9s'>
-                        Aug 26, 2026 - Aug 27, 2026
+                        Aug 29, 2026
                     </text>
                 </g>
 
