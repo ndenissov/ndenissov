@@ -9,7 +9,7 @@ PYPI_PACKAGES = [
     "hdrezka", "mspm", "notateit", "universalimg",
     "easyproxies", "ebomb", "spys", "fastdub",
     "pycocic", "proxytv", "minipy3", "visualpy",
-    "tgphind", "pyfastdub"
+    "tgphind", "pyfastdub", "codegment", "kino-flex-dl"
 ]
 
 def parse_badge_value(val):
