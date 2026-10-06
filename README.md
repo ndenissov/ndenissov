@@ -60,4 +60,7 @@
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=ndenissov&color=36BCF7&style=for-the-badge" alt="Profile Views" />
+  <a href="https://github.com/ndenissov?tab=followers">
+    <img src="https://img.shields.io/github/followers/ndenissov?label=Follow&style=for-the-badge&color=36BCF7" alt="Follow" />
+  </a>
 </p>
