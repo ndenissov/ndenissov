@@ -1,11 +1,11 @@
 {
-  "pypiDownloads": 447557,
-  "githubDownloads": 479,
+  "pypiDownloads": 447560,
+  "githubDownloads": 491,
   "schemaVersion": 1,
   "label": "PyPI Downloads",
-  "message": "447,557",
+  "message": "447,560",
   "color": "blue",
   "github_label": "GitHub Downloads",
-  "github_message": "479",
+  "github_message": "491",
   "github_color": "green"
 }
